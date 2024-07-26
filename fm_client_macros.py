@@ -4,6 +4,21 @@ from PIL import Image, ImageEnhance, ImageFilter
 import time
 import pygetwindow as gw
 import sys
+import roles_txt_to_list
+
+# Placeholder coordinates (to be replaced with actual coordinates)
+COORD_OK_BUTTON = (1050, 610)
+COORD_FOOTBALL_MANAGER = (850, 420)
+COORD_PYTHON = (750, 660)
+COORD_PROJECTS = (750, 490)
+COORD_FM_PROJECT = (750, 490)
+COORD_DATA = (735, 530)
+COORD_ROLES = (735, 490)
+COORD_UNTITLED = (960, 340)
+COORD_SAVE_BUTTON = (1150, 755)
+
+# Get hold of the list of roles
+roles = roles_txt_to_list.process_roles_file('roles.txt')
 
 # Ensure the tesseract executable is in your PATH, or specify the location
 # For example: pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
@@ -96,9 +111,9 @@ def click_on_text_in_window(text, offset_x = 0, offset_y=0):
         print(f"Text '{text}' not found for clicking.")
         return None
 
-def iterate_dropdown_items(iterations):
+def iterate_dropdown_items(roles):
     # Loop to go through a fixed number of items
-    for i in range(iterations):
+    for role in roles:
         pyautogui.moveTo(edit_search_position)
         pyautogui.click()
         time.sleep(0.2) 
@@ -114,14 +129,66 @@ def iterate_dropdown_items(iterations):
         time.sleep(0.2)  # Wait for the action to complete
 
         # Optional: Perform additional actions here
-        perform_action_on_item()
+        pyautogui.moveTo(ok_position)
+        pyautogui.click()
+        time.sleep(1)  # Adjust sleep time as needed for the action to complete
+        perform_action_on_item(role)
 
-def perform_action_on_item():
-    # Example action: Right click
-    # pyautogui.rightClick()
-    pyautogui.moveTo(ok_position)
-    pyautogui.click()
-    time.sleep(0.2)  # Adjust sleep time as needed for the action to complete
+def perform_action_on_item(role):
+    """
+    This function will press control P then click ok then click on Fottball Manager 2023 the press up arrow three times
+    then doubleclick python then double click projects  then double click on FM project then double click on data then 
+    double click on roles then double click on Untitled then type the next entry from roles list then cick save
+    """
+    
+    # Press Control + P
+    pyautogui.hotkey('ctrl', 'p')
+    time.sleep(0.2)  # Sleep to allow action to complete
+    
+    # Click OK button
+    pyautogui.click(COORD_OK_BUTTON)
+    time.sleep(0.2)
+    
+    # Click on Football Manager 2023
+    pyautogui.click(COORD_FOOTBALL_MANAGER)
+    time.sleep(0.2)
+    
+    # Press Up Arrow three times
+    pyautogui.press('up', presses=3, interval=0.5)
+    pyautogui.press('enter', presses=1, interval=0.5)
+    time.sleep(0.2)
+
+    # Double click on Python
+    pyautogui.doubleClick(COORD_PYTHON)
+    time.sleep(0.2)
+    
+    # Double click on Projects
+    pyautogui.doubleClick(COORD_PROJECTS)
+    time.sleep(0.2)
+    
+    # Double click on FM Project
+    pyautogui.doubleClick(COORD_FM_PROJECT)
+    time.sleep(0.2)
+    
+    # Double click on Data
+    pyautogui.doubleClick(COORD_DATA)
+    time.sleep(0.2)
+    
+    # Double click on Roles
+    pyautogui.doubleClick(COORD_ROLES)
+    time.sleep(0.2)
+    
+    # Double click on Untitled
+    pyautogui.doubleClick(COORD_UNTITLED)
+    time.sleep(0.2)
+    
+    # Type the role entry
+    pyautogui.typewrite(role)
+    time.sleep(0.2)
+    
+    # Click Save button
+    pyautogui.click(COORD_SAVE_BUTTON)
+    time.sleep(0.2)
 
 # Main script execution
 if __name__ == "__main__":
@@ -131,18 +198,10 @@ if __name__ == "__main__":
         time.sleep(3)
         
         bring_window_to_focus("Football Manager 2023")
-        # edit_search_position = click_on_text_in_window(r"QuickSearch", offset_x=170)
-        # if edit_search_position:
-        #     base_click_position = click_on_text_in_window("Role", offset_y=30)
-        #     if base_click_position:
-        #         iterate_dropdown_items(base_click_position, 45)
-        #         ok_position = click_on_text_in_window("ok", offset_y=0)
         edit_search_position = (1800, 250)
         ok_position = (1800, 740)
         role_position = (1250, 405)
-        iterate_dropdown_items(44)
-        # pyautogui.moveTo(role_position)
-        # pyautogui.click()
-
+        iterate_dropdown_items(roles)
+        # pyautogui.moveTo(COORD_PROJECTS)
     finally:
         cleanup_logging(log_file)

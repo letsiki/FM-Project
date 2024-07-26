@@ -1,0 +1,44 @@
+Goalkeeper
+Sweeper Keeper
+Full-Back
+Wing-Back
+No-Nonsense Full-Back
+Complete Wing-Back
+Inverted Wing-Back
+Central Defender
+Libero
+Ball Playing Defender
+No-Nonsense Centre-Back
+Wide Centre Back
+Defensive Midfielder
+Deep Lying Playmaker
+Ball Winning Midfielder
+Anchor
+Half Back
+Regista
+Roaming Playmaker
+Segundo Volante
+Wide Midfielder
+Winger
+Defensive Winger
+Wide Playmaker
+Inverted Winger
+Central Midfielder
+Box to Box Midfielder
+Advanced Playmaker
+Mezzala
+Carrilero
+Inside Forward
+Trequartista
+Wide Target Forward
+Raumdeuter
+Attacking Midfielder
+Enganche
+Shadow Striker
+Deep Lying Forward
+Advanced Forward
+Target Forward
+Poacher
+Complete Forward
+Pressing Forward
+False Nine
