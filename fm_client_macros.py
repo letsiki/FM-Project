@@ -47,7 +47,7 @@ def capture_screen(region=None, filename='screenshot.png'):
 
 def preprocess_image(image_path):
     img = Image.open(image_path)
-    img = img.convert('L')  # Convert to grayscale
+    # img = img.convert('L')  # Convert to grayscale
     img = img.filter(ImageFilter.SHARPEN)  # Apply sharpening filter
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(5)  # Increase contrast significantly
@@ -84,10 +84,10 @@ def find_text_on_screen(text, region=None):
     print(f"Text '{text}' not found.")
     return None
 
-def click_on_text_in_window(text, offset_y=0):
+def click_on_text_in_window(text, offset_x = 0, offset_y=0):
     location = find_text_on_screen(text)
     if location:
-        click_position = (location[0], location[1] + offset_y)
+        click_position = (location[0] + offset_x, location[1] + offset_y)
         print(f"Clicking on text '{text}' at {click_position}")
         pyautogui.moveTo(click_position)
         pyautogui.click()
@@ -96,19 +96,22 @@ def click_on_text_in_window(text, offset_y=0):
         print(f"Text '{text}' not found for clicking.")
         return None
 
-def iterate_dropdown_items(base_click_position, iterations, offset_y=0):
+def iterate_dropdown_items(iterations):
     # Loop to go through a fixed number of items
     for i in range(iterations):
-        click_position = (base_click_position[0], base_click_position[1] + i * offset_y)
-        print(f"Clicking at {click_position}")
-        pyautogui.moveTo(click_position)
+        pyautogui.moveTo(edit_search_position)
         pyautogui.click()
-        time.sleep(0.1)  # Wait for the dropdown to open
+        time.sleep(0.2) 
+        # click_position = (role_position[0], role_position[1])
+        # print(f"Clicking at {click_position}")
+        pyautogui.moveTo(role_position)
+        pyautogui.click()
+        time.sleep(0.2)  # Wait for the dropdown to open
 
         # Press Arrow Up and Enter to select an item
         pyautogui.press('up')
         pyautogui.press('enter')
-        time.sleep(0.1)  # Wait for the action to complete
+        time.sleep(0.2)  # Wait for the action to complete
 
         # Optional: Perform additional actions here
         perform_action_on_item()
@@ -116,18 +119,30 @@ def iterate_dropdown_items(base_click_position, iterations, offset_y=0):
 def perform_action_on_item():
     # Example action: Right click
     # pyautogui.rightClick()
-    time.sleep(0.1)  # Adjust sleep time as needed for the action to complete
+    pyautogui.moveTo(ok_position)
+    pyautogui.click()
+    time.sleep(0.2)  # Adjust sleep time as needed for the action to complete
 
 # Main script execution
 if __name__ == "__main__":
     log_file = setup_logging()
     try:
-        print("Starting actions in 5 seconds...")
-        time.sleep(5)
+        print("Starting actions in 3 seconds...")
+        time.sleep(3)
         
         bring_window_to_focus("Football Manager 2023")
-        base_click_position = click_on_text_in_window("Role", offset_y=30)
-        if base_click_position:
-            iterate_dropdown_items(base_click_position, 45)
+        # edit_search_position = click_on_text_in_window(r"QuickSearch", offset_x=170)
+        # if edit_search_position:
+        #     base_click_position = click_on_text_in_window("Role", offset_y=30)
+        #     if base_click_position:
+        #         iterate_dropdown_items(base_click_position, 45)
+        #         ok_position = click_on_text_in_window("ok", offset_y=0)
+        edit_search_position = (1800, 250)
+        ok_position = (1800, 740)
+        role_position = (1250, 405)
+        iterate_dropdown_items(44)
+        # pyautogui.moveTo(role_position)
+        # pyautogui.click()
+
     finally:
         cleanup_logging(log_file)

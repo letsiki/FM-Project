@@ -9,3 +9,5 @@ Unfortunately this is not possible I need to figure out something else maybe add
 In the meanwhile I added the hidden attributes to the view. It will take place in my next exports
 
 Ok assistant helped I can add a new manager once the sim is over. Now I am getting more interesting results
+
+currently goes through all roles assumung edit search is open. This is not good enough I need to open it each time
