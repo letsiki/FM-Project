@@ -51,5 +51,5 @@ def html_table_to_csv(directory_path):
             print(f'Table from {html_file} saved to {output_csv_file}')
 
 # Change the path to whatever the relative source of the html files is
-directory_path = 'data/roles'
+directory_path = 'data/HeaderRatio'
 html_table_to_csv(directory_path)

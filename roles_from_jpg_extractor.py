@@ -37,7 +37,7 @@ def extract_text_from_image(image_path):
     return text
 
 # List of image paths
-image_paths = ['roles1of2.bmp', 'roles2of2.bmp']
+image_paths = ['data/img/roles1of2.bmp', 'data/img/roles2of2.bmp']
 
 # Extract text from each image and combine
 combined_text = ""
