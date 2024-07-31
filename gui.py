@@ -5,8 +5,17 @@ enhancements:
 - creates csv and json folders if non-existent
 
 bugs:
-- When creating a new directory from the selecto folder dialog html files get moved
-to initial dir and cannot be found by the functions that follow
+- (SOLVED) When creating a new directory from the selecto folder dialog html files get moved
+to initial dir and cannot be found by the functions that follow. The rest of the functions
+Problem Break Down
+Browse Folders only creates folders, it does not move the file. And the folders it creates
+are correct whether I use the new folder option or not 
+FIle gets moved when I browse folders although there is no code in browse folders to move the file
+It seems that there is some code in move_html_files.py that runs the function. This occurs even though
+I only importwed the function not the whole module
+So I now fixed it by adding if __name__ == '__main__'. THe question is why does the problem occur only when I 
+create a new folder.
+I could not figure it out but I have tested it and it now works in both cases
 """
 
 import tkinter as tk

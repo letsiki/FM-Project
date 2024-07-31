@@ -8,6 +8,7 @@ def move_html_files(dest_relative_path):
     
     :param dest_relative_path: Relative path to the destination directory.
     """
+    print('move_html_files called')
     # Fixed source directory
     source_dir = r"E:\Documents\Sports Interactive\Football Manager 2023"
     
@@ -37,6 +38,7 @@ def move_html_files(dest_relative_path):
         shutil.move(src_path, dest_path)
         print(f"Moved: {src_path} -> {dest_path}")
 
-# Example usage
-relative_destination = ""  # Relative path from current working directory
-move_html_files(relative_destination)
+if __name__ == "__main__":
+    # Example usage
+    relative_destination = ""  # Relative path from current working directory
+    move_html_files(relative_destination)
