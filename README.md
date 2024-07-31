@@ -32,4 +32,12 @@ No I have the function to find correlations and also the function to test a data
 Now I want to find ways to use this in the game. For example I  can find correlation for each role and then 
 use this to predict rating on a dataset I got from a scout or player search
 
+31/07/24
+---------------------------------------------------------------------------------------------------------------------------------------
+I now have a gui version bug free for importing files from FM folder, all the way to displaying correlations and
+saving them to a json file. The predict_rating that uses that json is still text-based
+TODO:
+    group the merged dataframe by a specific attribute and plot a line that show how the stat fluctuates as the attribute increases
+---------------------------------------------------------------------------------------------------------------------------------------
+
 

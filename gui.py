@@ -28,6 +28,8 @@ from csv_merger_to_dataframe import load_and_merge_csv_files_to_df
 from correlations import calculate_correlations
 from import_export_dict_json import dict_to_file
 from move_html_files import move_html_files
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Create the main application window
 class App:
@@ -108,20 +110,63 @@ class App:
             if self.negative_stat_var.get():
                 kwargs2['negative_stat'] = True
             
-            df = load_and_merge_csv_files_to_df(self.csv_directory_path, **kwargs)
+            self.df = load_and_merge_csv_files_to_df(self.csv_directory_path, **kwargs)
             # print("DataFrame Head:")
             # print(df.head())
             print('\nDataframe Shape:')
-            print(df.shape)
+            print(self.df.shape)
             print()
             
-            correlations_dict = calculate_correlations(df, **kwargs2)
-            dict_to_file(correlations_dict, self.json_directory_path)
+            self.correlations_dict = calculate_correlations(self.df, **kwargs2)
+            dict_to_file(self.correlations_dict, self.json_directory_path)
             
             print(f"Correlations saved to {self.json_directory_path}")
 
         except Exception as e:
             print(f"An error occurred: {e}")
+        self.plot()
+
+    def plot(self):
+        # Get the first 5 keys from the dictionary
+        keys = list(self.correlations_dict.keys())[:5]
+
+        for key in keys:
+            # Check if the key exists in the DataFrame columns
+            if key in self.df.columns:
+                # Create a new DataFrame with two columns
+                new_df = self.df[[key, self.df.columns[3]]].copy()
+
+                  # Count the occurrences of each group
+                group_counts = new_df[key].value_counts()  # New line
+
+                # Filter groups with at least 150 occurrences
+                valid_groups = group_counts[group_counts >= 150].index  # New line
+            
+                # Filter the new DataFrame to keep only valid groups
+                new_df = new_df[new_df[key].isin(valid_groups)]  # Modified line
+                
+                # Group by the 'key' column and calculate the mean of 'fourth_column'
+                new_df = new_df.groupby(key).agg({self.df.columns[3]: 'mean'}).reset_index()
+                
+                # Rename columns for clarity
+                new_df.columns = [key, f'Average_{self.df.columns[3]}']
+                
+                # Plot the data
+                plt.figure(figsize=(10, 6))
+                plt.plot(new_df[key], new_df[f'Average_{self.df.columns[3]}'], marker='o', linestyle='-')
+                plt.title(f'Average of {self.df.columns[3]} vs {key}')
+                plt.xlabel(key)
+                plt.ylabel(f'Average of {self.df.columns[3]}')
+
+                # Set x-axis ticks to show integers from 1 to 20
+                plt.xticks(np.arange(1, 21, 1))  # Use numpy to create an array from 1 to 20 with step 1
+
+                plt.grid(True)
+                plt.show()
+            else:
+                print(f"Column '{key}' not found in DataFrame.")
+
+        
 
 class TextStream:
     def __init__(self, text_widget):
