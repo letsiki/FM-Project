@@ -3,6 +3,10 @@ gui version of convert_merge_and_display.py.
 
 enhancements:
 - creates csv and json folders if non-existent
+
+bugs:
+- When creating a new directory from the selecto folder dialog html files get moved
+to initial dir and cannot be found by the functions that follow
 """
 
 import tkinter as tk
@@ -53,6 +57,9 @@ class App:
         # Redirect stdout to the text widget
         self.output_stream = TextStream(self.output_text)
         sys.stdout = self.output_stream
+
+        # Print Warning
+        print('PLEASE DO NOT CHOOSE TO CREATE A NEW FOLDER FROM THE \'Browse Folders\' DIALOG!!!')
 
     def browse_folders(self):
         initial_dir = os.path.join(os.getcwd(), 'data')
