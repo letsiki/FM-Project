@@ -1,0 +1,46 @@
+Nations: Serbia, Croatia, Poland, Ukraine
+Example Clubs: Red Star Belgrade (Serbia), Dinamo Zagreb (Croatia), Legia Warsaw (Poland)
+2. Scandinavia
+Nations: Denmark, Sweden, Norway
+Example Clubs: FC Nordsjælland (Denmark), Malmö FF (Sweden), Rosenborg (Norway)
+3. South America
+Nations: Argentina, Brazil, Uruguay, Colombia
+Example Clubs: Racing Club (Argentina), Grêmio (Brazil), Nacional (Uruguay), Atlético Nacional (Colombia)
+4. Portugal
+Nation: Portugal
+Example Clubs: SC Braga, Vitória de Guimarães, Marítimo
+5. Turkey
+Nation: Turkey
+Example Clubs: Galatasaray, Fenerbahçe, Trabzonspor
+6. Africa
+Regions: West Africa, Central Africa
+Nations: Ivory Coast, Ghana, Nigeria, Senegal
+Example Clubs: ASEC Mimosas (Ivory Coast), Accra Hearts of Oak (Ghana)
+7. Eastern Asia
+Nations: Japan, South Korea
+Example Clubs: FC Seoul (South Korea), Kashima Antlers (Japan)
+8. Central Europe
+Nations: Austria, Switzerland
+Example Clubs: RB Salzburg (Austria), Young Boys (Switzerland)
+9. North America
+Nation: Mexico
+Example Clubs: Club América, Chivas, Pumas UNAM
+10. Balkans
+Nations: Bosnia, Montenegro, Slovenia
+Example Clubs: FK Sarajevo (Bosnia), Olimpija Ljubljana (Slovenia)
+Bonus: Eastern European Lesser-known Nations
+Nations: Slovakia, Hungary, Romania
+These nations also occasionally produce wonderkids at even lower prices compared to more prominent Eastern European countries.
+This list groups the nations and regions as you’ll find them in Football Manager, making it easier for scouting in the game!
+
+
+sodesttrom  Denmark   -  Finland Iceland
+Donateli                      - Italy Belgium
+Ward        Portugal - Angola France England
+nijhuis Norway        Sweden      - Netherlands Germany Poland Slovakia
+Cicovic Bosnia Serbia Montenegro - Spain Nigeria
+Siviero - Argentina Uruguay Colombia - Paraguay Mexico , Hungary, 
+Grillo Brazil + Japan slovenia Romania
+Farantos Turkey South Korea - Greece Cyprus Ukraine
+Dias + Austria Switzerland Croatia Ivory Coast
+Correia Cameroon Ghana, , Senegal

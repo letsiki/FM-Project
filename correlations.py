@@ -1,4 +1,7 @@
 import pandas as pd
+from scipy.stats import spearmanr
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 def calculate_correlations(df, negative_stat=False):
 
@@ -9,10 +12,15 @@ def calculate_correlations(df, negative_stat=False):
     
     # Initialize an empty dictionary to store correlation values
     correlations = {}
-    
+    df = df.dropna()
+    # I coukd be using standardization and PCA to detect attributes that influence each other 
+
     # Calculate the correlation of the second column with each column from the fifth to the end
     for col in df.columns[4:]:
-        correlations[col] = df.iloc[:, 3].corr(df[col])
+        # correlations[col] = df.iloc[:, 3].corr(df[col])
+        corr, p_value = spearmanr(df.iloc[:, 3], df[col])
+        if p_value < 0.05:  # Default Value if p-value is 0.05
+            correlations[col] = corr
     
     # Sort the correlations dictionary by value in descending order
     if not negative_stat:

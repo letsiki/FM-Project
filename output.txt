@@ -1,0 +1,201 @@
+Name: Jenne Thielen
+Position: AM (L), ST (C)
+Age: 16
+
+Top 50 Roles:
+  w_a: 13.18
+  w_s: 12.76
+  iw_a: 12.52
+  if_a: 12.36
+  if_s: 12.26
+  t_a: 12.25
+  ap_a: 12.23
+  eng_s: 12.22
+  amc_s: 12.2
+  af_a: 12.18
+
+
+Name: Mauritius Van Vaerenbergh
+Position: D (RC), WB (R)
+Age: 17
+
+Top 50 Roles:
+  wtf_s: 11.82
+  pf_d: 11.54
+  bwm_s: 11.42
+  ncb_de: 11.41
+  ncb_st: 11.41
+  bwm_d: 11.37
+  wcb_de: 11.32
+  ncb_co: 11.31
+  pf_s: 11.31
+  cd_st: 11.3
+  cd_de: 11.26
+  cd_co: 11.21
+  wtf_a: 11.05
+  wb_d: 10.96
+  wcb_s: 10.96
+  fb_a: 10.93
+  hb_d: 10.92
+  bpd_st: 10.88
+  bpd_d: 10.84
+  wcb_a: 10.82
+
+
+Name: Trond Sandvik
+Position: D (C)
+Age: 19
+
+Top 50 Roles:
+  dm_d: 13.56
+  cm_d: 13.37
+  dm_s: 13.37
+  a_d: 13.33
+  nfb_d: 13.13
+  hb_d: 13.12
+  fb_d: 13.06
+  bwm_d: 13.0
+  bwm_s: 13.0
+  dlp_d: 13.0
+  ncb_co: 13.0
+  ncb_st: 12.94
+  cd_co: 12.89
+  ncb_de: 12.88
+  cd_st: 12.85
+  bpd_co: 12.84
+  cd_de: 12.84
+  bpd_st: 12.81
+  bpd_d: 12.8
+  fb_s: 12.77
+  car_s: 12.76
+  dlp_s: 12.72
+  pf_d: 12.71
+  iwb_d: 12.62
+  pf_s: 12.62
+  cm_s: 12.56
+
+
+Name: Filip Lundin
+Position: D (C), DM, M (C)
+Age: 21
+
+Top 50 Roles:
+  dlp_d: 14.06
+  dlp_s: 14.0
+  car_s: 13.81
+  cm_a: 13.71
+  cm_s: 13.67
+  eng_s: 13.5
+  cm_d: 13.37
+  amc_s: 13.35
+  ap_s: 13.35
+  dlf_s: 13.25
+  rga_s: 13.23
+  mez_s: 13.19
+  pf_s: 13.19
+  rpm_s: 13.19
+  iwb_d: 13.17
+  pf_d: 13.17
+  bpd_co: 13.12
+  a_d: 13.07
+
+
+Name: Fabio Piva
+Position: D/WB/AM (R)
+Age: 21
+
+Top 50 Roles:
+  pf_d: 12.54
+  bwm_s: 12.53
+  wtf_s: 12.53
+  bwm_d: 12.42
+  pf_s: 12.35
+  cwb_s: 12.17
+  pf_a: 12.15
+  w_s: 12.12
+  wtf_a: 12.05
+  fb_a: 12.04
+  cwb_a: 12.0
+  wb_d: 11.96
+  wb_s: 11.96
+  cm_s: 11.94
+  rpm_s: 11.87
+  wb_a: 11.87
+  car_s: 11.81
+  iwb_s: 11.76
+  tf_s: 11.68
+  cm_d: 11.63
+  b2b_s: 11.62
+  fb_s: 11.59
+  iwb_d: 11.58
+  dlp_d: 11.56
+  dm_d: 11.56
+  iwb_a: 11.55
+
+
+Name: Bogdan Istrate
+Position: GK
+Age: 17
+
+Top 50 Roles:
+  pf_d: 10.42
+  gk_d: 10.36
+  pf_s: 10.19
+  bwm_s: 10.05
+  dm_d: 9.94
+  bwm_d: 9.89
+  sw_d: 9.89
+  sw_s: 9.82
+  dlp_d: 9.67
+  dlp_s: 9.67
+  dm_s: 9.58
+  hb_d: 9.54
+  sw_a: 9.52
+  cm_d: 9.47
+
+
+Name: Nio Barry
+Position: D (C), DM, M (C)
+Age: 18
+
+Top 50 Roles:
+  ncb_st: 11.59
+  bwm_d: 11.47
+  bwm_s: 11.47
+  cd_st: 11.4
+  ncb_de: 11.29
+  pf_d: 11.21
+  cd_de: 11.16
+  nfb_d: 11.13
+  dm_d: 10.89
+  pf_s: 10.85
+  ncb_co: 10.81
+  dm_s: 10.79
+  hb_d: 10.79
+  cd_co: 10.74
+  a_d: 10.73
+  cm_d: 10.63
+
+
+Name: Yasser Bilal
+Position: M/AM (C)
+Age: 20
+
+Top 50 Roles:
+  eng_s: 13.72
+  ap_s: 13.65
+  amc_s: 13.55
+  ap_a: 13.45
+  rga_s: 13.45
+  amc_a: 13.33
+  dlp_s: 13.22
+  dlf_s: 13.2
+  f9_s: 13.16
+  t_a: 13.12
+  dlf_a: 13.1
+  iw_a: 12.95
+  dlp_d: 12.89
+  if_s: 12.83
+  cm_a: 12.76
+
+

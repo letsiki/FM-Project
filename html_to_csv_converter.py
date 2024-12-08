@@ -52,5 +52,5 @@ def html_table_to_csv(directory_path):
 
 if __name__ == '__main__':
     # Change the path to whatever the relative source of the html files is
-    directory_path = 'data/HeaderRatio'
+    directory_path = 'evaluate_roles'
     html_table_to_csv(directory_path)

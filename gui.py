@@ -69,8 +69,8 @@ class App:
         self.output_stream = TextStream(self.output_text)
         sys.stdout = self.output_stream
 
-        # Print Warning
-        print('PLEASE DO NOT CHOOSE TO CREATE A NEW FOLDER FROM THE \'Browse Folders\' DIALOG!!!')
+        # # Print Warning
+        # print('PLEASE DO NOT CHOOSE TO CREATE A NEW FOLDER FROM THE \'Browse Folders\' DIALOG!!!')
 
     def browse_folders(self):
         initial_dir = os.path.join(os.getcwd(), 'data')
@@ -99,7 +99,7 @@ class App:
 
         try:
             move_html_files(self.directory_path)
-            html_table_to_csv(self.directory_path)
+            html_table_to_csv(self.directory_path)  
             
             kwargs = {}
             kwargs2 = {}
@@ -124,9 +124,14 @@ class App:
 
         except Exception as e:
             print(f"An error occurred: {e}")
-        self.plot()
+        # Uncheck to run plot()
+        # self.plot()
 
     def plot(self):
+        """
+        Prints the plots of the five most important correlations
+        """
+
         # Get the first 5 keys from the dictionary
         keys = list(self.correlations_dict.keys())[:5]
 
@@ -140,7 +145,7 @@ class App:
                 group_counts = new_df[key].value_counts()  # New line
 
                 # Filter groups with at least 150 occurrences
-                valid_groups = group_counts[group_counts >= 150].index  # New line
+                valid_groups = group_counts[group_counts >= 40].index  # New line
             
                 # Filter the new DataFrame to keep only valid groups
                 new_df = new_df[new_df[key].isin(valid_groups)]  # Modified line
@@ -184,3 +189,52 @@ if __name__ == "__main__":
     root.minsize(width=1100, height=900)
     app = App(root)
     root.mainloop()
+
+# Plot code for using ranges instead of single values
+
+    # def plot(self):
+    #     # Define the bin edges and labels for grouping ranges
+    #     bins = [0, 5, 10, 15, 20]
+    #     labels = ['1-5', '6-10', '11-15', '16-20']
+
+    #     # Get the first 5 keys from the dictionary
+    #     keys = list(self.correlations_dict.keys())[:5]
+
+    #     for key in keys:
+    #         # Check if the key exists in the DataFrame columns
+    #         if key in self.df.columns:
+    #             # Create a new DataFrame with two columns
+    #             new_df = self.df[[key, 'fourth_column']].copy()
+                
+    #             # Create a new column for range grouping
+    #             new_df['Range'] = pd.cut(new_df[key], bins=bins, labels=labels, right=True)
+                
+    #             # Count the occurrences in each range
+    #             range_counts = new_df['Range'].value_counts()
+                
+    #             # Filter ranges with at least 5 occurrences
+    #             valid_ranges = range_counts[range_counts >= 5].index
+                
+    #             # Filter the new DataFrame to keep only valid ranges
+    #             new_df = new_df[new_df['Range'].isin(valid_ranges)]
+                
+    #             # Group by the 'Range' column and calculate the mean of 'fourth_column'
+    #             new_df = new_df.groupby('Range').agg({'fourth_column': 'mean'}).reset_index()
+                
+    #             # Rename columns for clarity
+    #             new_df.columns = ['Range', 'Average_Fourth_Column']
+                
+    #             # Plot the data
+    #             plt.figure(figsize=(10, 6))
+    #             plt.plot(new_df['Range'], new_df['Average_Fourth_Column'], marker='o', linestyle='-')
+    #             plt.title(f'Average of Fourth Column vs {key} (Grouped by Range)')
+    #             plt.xlabel('Range')
+    #             plt.ylabel('Average of Fourth Column')
+                
+    #             # Set x-axis ticks to show range labels
+    #             plt.xticks(ticks=np.arange(len(labels)), labels=labels)
+                
+    #             plt.grid(True)
+    #             plt.show()
+    #         else:
+    #             print(f"Column '{key}' not found in DataFrame.")

@@ -1,0 +1,21 @@
+Create a coach class with attributes and calculated properties for each training category
+the calculated properties will not be calculated again unless the attributes have changed
+also include coach name
+
+create methods for each coach role that returns the rating (int from 1 to 10)
+the coach roles are ATe ATa DTe DTa PTe Pta Leave the methods body empty for me to fill
+
+create a method that  will generate a list with the coaches best Roles
+it willl be a list of tuples (role, rating) 
+if the best role has a rating of 7 out of 10 it will return all roles that have 5 or more rating
+
+in the main create a coaching team by creating coaches
+they will be appended to a list
+keep in mind that gk fitness and set pieces are excluded
+
+Now create a method that will go through each training role and add all potential coaches for each
+this will be a tuple with the coach name and star rating for the given role
+so each role will end up with a list of tuples
+now it will go through all combinations and sum the stars for each
+in the end the highest will be returned
+if that is not possible it wil error out
