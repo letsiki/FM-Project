@@ -1,3 +1,10 @@
+Description
+
+This Python Project contains multiple apps with and without GUI that facilitate certain tasks in a football manager save
+like scouting, player reports and Coach Assignments.
+It also contains another app that is meant to be used with a simulation save in order to determine the most important
+attributes in the game.
+
 TODO's
 
 create attribute correlations to other stats not just average rating
